@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<table class="table-bordered">
+    <tr>
+        <td>
+            @{
+
+                Html.RenderAction("Categories", "Home");
+
+
+            }
+        </td>
+        <td>
+            @{
+                Html.RenderAction("KategoriWithSubCategori", "Home");
+            }
+
+
+        </td>
+    </tr>
+
+    <tr>
+       
+    </tr>
+</table>
+

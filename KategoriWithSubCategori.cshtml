@@ -1,0 +1,23 @@
+﻿@model DynamicMenu.Controllers.ViewModel
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <ul class="nav nav-tabs">
+        @foreach (var item in Model.KategoriListesi)
+        {
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">@item.Text  </a>
+                @if (item.Product.Count > 0)
+                {
+                    <ul class="dropdown-menu">
+                        @foreach (var item1 in  Model.ProductListesi.Where(x=>x.Kategoriid==item.Id))
+                        {
+                            <li><a href="#">@item1.Title</a> </li>
+                        }
+                    </ul>
+                }
+            </li>
+        }
+    </ul>
+</div>
